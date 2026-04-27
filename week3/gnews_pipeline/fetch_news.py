@@ -1,15 +1,28 @@
+import os
 import requests
+from dotenv import load_dotenv
 
-API_KEY = "a48eb87ffd9102eba6f35bf6024d034c"
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
+
+print("API KEY LOADED:", API_KEY)  # DEBUG
 
 def fetch_country_data(country_code):
-    url = f"https://gnews.io/api/v4/top-headlines?country={country_code}&token={API_KEY}&lang=en&max=10"
-    
+    print("Fetching:", country_code)  # DEBUG
+
+    url = f"https://gnews.io/api/v4/top-headlines?country={country_code}&token={API_KEY}&lang=en&max=5"
+
     response = requests.get(url)
 
-    if response.status_code != 200:
-        print("Error:", response.text)
-        return []
+    print("Status Code:", response.status_code)  # DEBUG
 
     data = response.json()
+
+    print("Articles found:", len(data.get("articles", [])))  # DEBUG
+
     return data.get("articles", [])
+
+
+# IMPORTANT: actually CALL the function
+fetch_country_data("in")
