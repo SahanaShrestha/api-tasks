@@ -1,0 +1,42 @@
+import pandas as pd
+import hashlib
+from fetch_news import fetch_country_data
+
+API_KEY = "a48eb87ffd9102eba6f35bf6024d034c"
+
+countries = {
+    "nepal": "np",
+    "india": "in",
+    "usa": "us",
+    "uk": "gb",
+    "australia": "au"
+}
+
+def generate_id(title, source, country):
+    return hashlib.md5(f"{title}-{source}-{country}".encode()).hexdigest()
+
+all_data = []
+
+for country_name, code in countries.items():
+    articles = fetch_country_data(code)
+
+    print(country_name, "->", len(articles))
+
+    for article in articles:
+        title = article.get("title") or "N/A"
+        source = article.get("source", {}).get("name") or "N/A"
+        published = article.get("publishedAt") or "N/A"
+
+        all_data.append({
+            "id": generate_id(title, source, country_name),
+            "country": country_name,
+            "title": title,
+            "source": source,
+            "publishedat": published
+        })
+
+df = pd.DataFrame(all_data)
+df = df.drop_duplicates(subset=["id"])
+df.to_csv("headlines.csv", index=False)
+
+print("Saved headlines.csv with", len(df), "rows")
