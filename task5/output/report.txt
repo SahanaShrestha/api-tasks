@@ -1,0 +1,16 @@
+Weather Data Analysis Report
+========================================
+
+Highest Avg Temp City: ('Delhi', 36.68571472167969)
+
+Hottest Day: ('Delhi', datetime.date(2026, 5, 2), 40.5)
+
+Days with Temp Difference > 10°C:
+('Kathmandu', datetime.date(2026, 5, 4), 11.200000762939453)
+('Delhi', datetime.date(2026, 5, 1), 14.5)
+('Delhi', datetime.date(2026, 5, 2), 15.5)
+('Delhi', datetime.date(2026, 5, 3), 12.60000228881836)
+('Delhi', datetime.date(2026, 5, 4), 12.400001525878906)
+('Tokyo', datetime.date(2026, 5, 1), 11.200000762939453)
+('Tokyo', datetime.date(2026, 5, 2), 13.90000057220459)
+('Tokyo', datetime.date(2026, 5, 3), 11.399999618530273)
