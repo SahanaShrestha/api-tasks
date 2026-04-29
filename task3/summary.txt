@@ -1,0 +1,11 @@
+Highest Avg Temp City: ('Delhi', 37.0)
+Hottest Day: ('Delhi', datetime.date(2026, 5, 3), 40.5)
+High Temp Difference Days:
+('Kathmandu', datetime.date(2026, 5, 4), 12.999999046325684)
+('Delhi', datetime.date(2026, 4, 29), 12.0)
+('Delhi', datetime.date(2026, 4, 30), 10.10000228881836)
+('Delhi', datetime.date(2026, 5, 1), 14.0)
+('Delhi', datetime.date(2026, 5, 2), 14.099998474121094)
+('Delhi', datetime.date(2026, 5, 3), 12.600000381469727)
+('Tokyo', datetime.date(2026, 5, 1), 11.200000762939453)
+('Tokyo', datetime.date(2026, 5, 2), 14.09999942779541)
