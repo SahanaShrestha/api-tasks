@@ -1,0 +1,13 @@
+metric,before,after,fixed,notes
+total_rows,100,100,0,Rows removed by deduplication + outlier filtering
+nulls_in_userId,0,0,0,Null rows dropped
+nulls_in_id,0,0,0,Null rows dropped
+nulls_in_title,0,0,0,Null rows dropped
+nulls_in_body,0,0,0,Null rows dropped
+duplicate_rows,0,0,0,drop_duplicates() applied
+type_mismatches,2,0,2,"Columns fixed: ['title', 'body']"
+out_of_range_userId,0,0,0,Rows with userId outside valid range dropped
+out_of_range_id,0,0,0,Rows with id outside valid range dropped
+format_title_not_titlecase,100,0,100,str.title() / str.strip() applied
+format_body_whitespace,0,0,0,str.title() / str.strip() applied
+TOTAL_ISSUES,102,0,102,Aggregate
